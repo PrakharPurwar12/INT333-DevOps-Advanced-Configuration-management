@@ -1,0 +1,11 @@
+# INT333 - DevOps Advanced Configuration
+
+This repository contains my practical work for **INT333: DevOps Advanced Configuration**.
+
+## Topics
+
+- [Puppet](./Puppet)
+- [Ansible](./Ansible)
+- [Terraform](./Terraform)
+
+More practicals and configurations will be added as the course progresses.
