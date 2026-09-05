@@ -7,6 +7,7 @@ This repository contains my practical work and hands-on learning for **INT333: D
 | # | Practical |
 |---|-----------|
 | 1 | [Puppet Practical 1](./Puppet%20practical%201.pdf) |
+| 2 | [Puppet Practical 2](./Puppet%20practical%202.pdf) |
 
 ## 🛠️ Topics
 
