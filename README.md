@@ -53,6 +53,35 @@ Refactors raw manifest logic into a reusable **Puppet class** to demonstrate sca
 
 ---
 
+### 4️⃣ Implementation of Puppet Modules
+📄 [Puppet Practical 4](https://github.com/PrakharPurwar12/INT333-DevOps-Advanced-Configuration-management/blob/main/Puppet%20Practical%204.pdf)
+
+Converts the standalone `myapp` class from Practical 3 into a proper, reusable **Puppet Module**, so the same configuration can be shared across multiple servers and environments:
+- **Problem:** The `myapp` class lives directly in `site.pp`/`myapp.pp`, limiting reuse across environments
+- **Solution:** Restructure it into the standard Puppet module layout
+- Creates module directory: `production/modules/myapp/manifests/`
+- Moves the class definition into `modules/myapp/manifests/init.pp` (the module's entry point)
+- `site.pp` continues to invoke it simply via `include myapp`
+- Module manages the same resources as before:
+  - `/home/Man` directory
+  - `/home/Man/myapp` directory
+  - `/home/Man/myapp/config.txt` with managed content
+- Verified using `puppet agent --test` on the agent — catalog compiles and applies successfully from the module path, confirming the file and directory structure and config content are correctly managed
+- Final structure follows Puppet's standard module convention:
+  ```
+  /etc/puppetlabs/code/environments/production/
+  ├── manifests/
+  │   └── site.pp
+  └── modules/
+      └── myapp/
+          └── manifests/
+              └── init.pp
+  ```
+
+**Tools:** Puppet, AWS
+
+---
+
 ## 🛠️ Technologies
 
 | Technology | Purpose |
