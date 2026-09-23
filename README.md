@@ -82,6 +82,21 @@ Converts the standalone `myapp` class from Practical 3 into a proper, reusable *
 
 ---
 
+### 5️⃣ Deploying a Web Server with Puppet (Assessment — Set A)
+📄 [prakhar12323770SetA](https://github.com/PrakharPurwar12/INT333-DevOps-Advanced-Configuration-management/blob/main/prakhar12323770SetA.pdf)
+
+Assessment task that uses Puppet to install, configure, and manage a live **Apache2 web server**, serving a custom personalized page:
+- **`package['apache2']`** — ensures Apache2 is installed
+- **`service['apache2']`** — ensures the service is running and enabled on boot
+- **`file['/var/www/site_770']`** — creates a dedicated site directory, dependent on the Apache2 package
+- **`file['/var/www/site_770/index.html']`** — creates a custom `index.html` with defined `mode`, `owner`, and `group` (`www-data`), containing personalized content (name and registration number)
+- Manifest applied from the Master and verified on the Agent via `puppet agent --test`, confirming Apache2 starts successfully and the page is served correctly
+- Content later **updated** (name, reg. no. and faculty name added) directly in `site.pp` and re-applied, demonstrating Puppet's idempotent re-convergence — the running agent picks up and applies only the changed resource (`index.html` content) without disrupting the rest of the catalog
+
+**Tools:** Puppet, AWS
+
+---
+
 ## 🛠️ Technologies
 
 | Technology | Purpose |
